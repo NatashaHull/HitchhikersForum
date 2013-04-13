@@ -7,9 +7,21 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  
+  <div class="navbar">
+    <div class="navbar-inner">
+      <a class="brand" href="#">Slartibartfast Discussion Board</a>
+      <ul class="nav">
+        <% if current_user %>
+          <li><span class="navbar-text">Hi, <%= current_user.email %></span></li>
+          <li><%= link_to "Sign Out", destroy_user_session_path, :method => :delete %></li>
+        <% else %>
+          <li><%= link_to "Sign In", new_user_session_path %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
   <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
+  <p class="alert" id="alert"><%= alert %></p>
   
 <%= yield %>
 

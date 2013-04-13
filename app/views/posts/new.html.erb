@@ -1,0 +1,9 @@
+<%= form_for @post, :url => { :action => "create" }, :html => {:class => "nifty_form"} do |f| %>
+  <div class="form">
+    <h3>Title</h3>
+    <%= f.text_field :title %>
+    <p>Body</p>
+    <%= f.text_area :body, :size => "60x12" %>
+    <p><%= f.submit "Create" %></p>
+  </div>
+<% end %>
