@@ -1,5 +1,7 @@
 <div class="post">
   <h2><%= @post.title %></h2>
   <p><%= @post.body %></p>
-  <em> by <%= @post.user.email %></em>
+  <em> Published at <%= @post.created_at.to_s %> by <%= @post.user.email %></em>
 </div>
+<%= link_to 'Go back to Index', posts_path %> |
+<%= link_to 'Edit topic', edit_post_path %>

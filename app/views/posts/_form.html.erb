@@ -1,0 +1,13 @@
+<div class="errorMessage"><%= f.error_messages %></div>
+<fieldset>
+  <div class="controls">
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+  <div class="controls">
+    <%= f.label :body %>
+    <%= f.text_area :body, :cols => 80, :rows => 10 %>
+  </div>
+    
+  <p><%= f.submit :class => "btn" %></p>
+</fieldset>
